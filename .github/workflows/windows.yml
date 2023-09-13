@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Try shell
-      shell: C:\msys64\usr\bin\bash.exe {0}
+      shell: msys2bash.cmd {0}
       run: |
         pwd
         echo "haha"
