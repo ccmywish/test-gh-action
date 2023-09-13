@@ -8,11 +8,11 @@ on:
 jobs:
   On-Windows:
 
-    runs-on: windows-latest
+    runs-on: windows-2022
 
     steps:
     - name: Try shell
-      shell: C:/msys64/usr/bin/bash.exe
+      shell: C:\msys64\usr\bin\bash.exe
       run: |
         pwd
         echo "haha"
