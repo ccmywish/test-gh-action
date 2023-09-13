@@ -1,0 +1,25 @@
+name: Windows Build
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  On-Windows:
+
+    runs-on: windows-latest
+
+    steps:
+    - name: Try shell
+      shell: C:\msys64\usr\bin\bash.exe
+      run: |
+        pwd
+        echo "haha"
+
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: 我在哪里？
+      run: pwd
+
