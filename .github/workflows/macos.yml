@@ -20,3 +20,6 @@ jobs:
         arch
         echo
         uname -a
+        echo
+        cc --version
+        which gcc
