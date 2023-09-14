@@ -1,9 +1,9 @@
 name: macOS Build
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "mac" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "mac" ]
 
 jobs:
   On-macOS:

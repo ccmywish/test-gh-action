@@ -1,0 +1,32 @@
+name: qemu Build
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+
+jobs:
+  qemu:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: uraimo/run-on-arch-action@v2
+      with:
+        arch: aarch64
+        distro: ubuntu22.04
+        run: |
+          which make
+          which cc
+          which gcc
+
+
+    - uses: uraimo/run-on-arch-action@v2
+      with:
+        arch: riscv64
+        distro: ubuntu22.04
+        run: |
+          which make
+          which cc
+          which gcc
