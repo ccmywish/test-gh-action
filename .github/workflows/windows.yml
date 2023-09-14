@@ -12,9 +12,10 @@ jobs:
 
     steps:
     - name: Try shell
-      shell: msys2bash.cmd {0}
+      shell: C:\msys64\usr\bin\bash.exe {0}
       run: |
         pwd
+        which make
         echo "haha"
 
     - name: Checkout repo
