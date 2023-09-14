@@ -6,7 +6,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  On-Windows:
+  On-macOS:
 
     runs-on: macos-latest
 
@@ -17,3 +17,5 @@ jobs:
         which make
         which brew
         which cc
+        arch
+        uname -a
