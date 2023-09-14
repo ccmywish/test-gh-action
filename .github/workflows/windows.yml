@@ -17,6 +17,8 @@ jobs:
         pwd
         which make
         echo "haha"
+        pacman -S mingw-w64-ucrt-x86_64-gcc --noconfirm
+        which make
 
     - name: Checkout repo
       uses: actions/checkout@v3
