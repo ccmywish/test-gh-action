@@ -16,3 +16,4 @@ jobs:
         which clang
         which make
         which brew
+        which cc
