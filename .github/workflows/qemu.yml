@@ -15,7 +15,7 @@ jobs:
     - uses: uraimo/run-on-arch-action@v2
       with:
         arch: aarch64
-        distro: ubuntu22.04
+        distro: bullseye
         run: |
           which make
           which cc
