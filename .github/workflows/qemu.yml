@@ -14,7 +14,6 @@ jobs:
           arch: armv7
           distro: ubuntu18.04
 
-
           # Set an output parameter `uname` for use in subsequent steps
           run: |
             uname -a
