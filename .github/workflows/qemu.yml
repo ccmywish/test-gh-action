@@ -22,7 +22,8 @@ jobs:
           run: |
             uname -a
             echo ::set-output name=uname::$(uname -a)
-            apt install build-essential
+            apt update
+            apt install build-essential -y
             gcc --version
             make --version
 
@@ -50,7 +51,7 @@ jobs:
             uname -a
             echo ::set-output name=uname::$(uname -a)
             apt update
-            apt install build-essential
+            apt install build-essential -y
             make --version
             gcc --version
 
