@@ -21,8 +21,6 @@ jobs:
           # Set an output parameter `uname` for use in subsequent steps
           run: |
             uname -a
-            echo ::set-output name=uname::$(uname -a)
-            git --version
             apt update
             apt install build-essential -y
             apt install git -y
@@ -35,7 +33,7 @@ jobs:
       - name: Get the output
         # Echo the `uname` output parameter from the `runcmd` step
         run: |
-          echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
+          echo ""
 
 
   riscv_job:
