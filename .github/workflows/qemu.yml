@@ -23,9 +23,14 @@ jobs:
             uname -a
             echo ::set-output name=uname::$(uname -a)
             git --version
-          #  apt install build-essential
-          #  apt update
-          #  apt install build-essential
+            apt update
+            apt install build-essential -y
+            apt install git -y
+            cd /home/runner/work
+            git clone https://github.com/RubyMetric/chsrc -b gh-pipeline
+            cd chsrc
+            make
+            ./chsrc
 
       - name: Get the output
         # Echo the `uname` output parameter from the `runcmd` step
