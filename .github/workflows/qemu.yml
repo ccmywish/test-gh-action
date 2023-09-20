@@ -21,11 +21,8 @@ jobs:
           # Set an output parameter `uname` for use in subsequent steps
           run: |
             uname -a
-            echo ::set-output name=uname::$(uname -a)
-            apt update
-            apt install build-essential -y
-            gcc --version
-            make --version
+            pwd
+            ls -al
 
       - name: Get the output
         # Echo the `uname` output parameter from the `runcmd` step
