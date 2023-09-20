@@ -21,9 +21,9 @@ jobs:
           # Set an output parameter `uname` for use in subsequent steps
           run: |
             uname -a
-            apt update
-            apt install build-essential -y
-            apt install git -y
+            apt update > /dev/null
+            apt install build-essential -y > /dev/null
+            apt install git -y > /dev/null
             cd /home/runner/work
             git clone https://github.com/RubyMetric/chsrc -b gh-pipeline
             cd chsrc
@@ -33,7 +33,9 @@ jobs:
       - name: Get the output
         # Echo the `uname` output parameter from the `runcmd` step
         run: |
-          echo ""
+          pwd
+          ls -al
+          ./chsrc
 
 
   riscv_job:
