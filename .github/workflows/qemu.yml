@@ -35,6 +35,8 @@ jobs:
         run: |
           pwd
           ls -al
+          cd /home/runner/work/chsrc
+          ls -al
           ./chsrc
 
 
