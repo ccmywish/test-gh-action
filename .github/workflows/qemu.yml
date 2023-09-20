@@ -22,6 +22,7 @@ jobs:
           run: |
             uname -a
             echo ::set-output name=uname::$(uname -a)
+            sudo apt install build-essential
             gcc --version
             make --version
 
@@ -48,8 +49,9 @@ jobs:
           run: |
             uname -a
             echo ::set-output name=uname::$(uname -a)
-            gcc --version
             make --version
+            gcc --version
+
 
       - name: Get the output
         # Echo the `uname` output parameter from the `runcmd` step
