@@ -40,7 +40,7 @@ jobs:
         id: runcmd
         with:
           arch: riscv
-          distro: ubuntu_latest
+          distro: ubuntu22.04
 
           # Set an output parameter `uname` for use in subsequent steps
           run: |
