@@ -18,6 +18,9 @@ jobs:
           arch: armv7
           distro: ubuntu_latest
 
+          dockerRunArgs: |
+            --volume "${PWD}/artifacts:/artifacts"
+
           # Set an output parameter `uname` for use in subsequent steps
           run: |
             uname -a
@@ -27,17 +30,17 @@ jobs:
             cd /home/runner/work
             git clone https://github.com/RubyMetric/chsrc -b gh-pipeline
             cd chsrc
-            make
-            ./chsrc
+            make CI CI_BUILD_NAME=chsrc-armv7-linux
+            cp ./chsrc-armv7-linux /artifacts
+
 
       - name: Get the output
         # Echo the `uname` output parameter from the `runcmd` step
         run: |
           pwd
           ls -al
-          cd /home/runner/work/
-          ls -al
-          ./chsrc
+          cd artifact
+          file ./chsrc-armv7-linux
 
 
   riscv_job:
