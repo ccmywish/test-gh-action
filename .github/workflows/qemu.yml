@@ -24,11 +24,11 @@ jobs:
           # Set an output parameter `uname` for use in subsequent steps
           run: |
             uname -a
-            apt update > /dev/null
-            apt install build-essential -y > /dev/null
-            apt install git -y > /dev/null
+            apt-get update -q
+            apt-get install build-essential -y -q
+            apt-get install git -y -q
             cd /home/runner/work
-            git clone https://github.com/RubyMetric/chsrc -b gh-pipeline
+            git clone https://github.com/RubyMetric/chsrc -b gh-pipeline -q
             cd chsrc
             make CI CI_BUILD_NAME=chsrc-armv7-linux
             cp ./chsrc-armv7-linux /artifacts
@@ -39,7 +39,7 @@ jobs:
         run: |
           pwd
           ls -al
-          cd artifact
+          cd artifacts
           file ./chsrc-armv7-linux
 
 
